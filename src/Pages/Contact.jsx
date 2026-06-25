@@ -195,7 +195,7 @@ export default function ContactPage({ navigateTo }) {
                   <p>Your inquiry has been sent successfully. Our team will contact you shortly.</p>
                 </div>
               ) : (
-                <form className="contact-form" onSubmit={handleSubmit} name="contact" data-netlify="true">
+                <form className="contact-form" onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="form-row">
                     <div className="form-group">
