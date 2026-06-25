@@ -5421,6 +5421,7 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   min-height: 350px;
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .quote-step-title {
@@ -5431,7 +5432,7 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   color: var(--gold-color);
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
