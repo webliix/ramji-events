@@ -16,12 +16,13 @@ import Blog from './Pages/Blog.jsx'
 import ContactPage from './Pages/Contact.jsx'
 import GetQuote from './Pages/GetQuote.jsx'
 import BookConsultation from './Pages/BookConsultation.jsx'
+import Testimonials from './Pages/Testimonials.jsx'
 
 function App() {
   const { theme, toggleTheme } = useTheme()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeMobileDropdown, setActiveMobileDropdown] = useState(null) // 'services' | 'portfolio' | null
-  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'about' | 'services' | 'service-detail' | 'portfolio' | 'venues' | 'gallery' | 'blog' | 'contact'
+  const [currentPage, setCurrentPage] = useState('home') // 'home' | 'about' | 'services' | 'service-detail' | 'portfolio' | 'venues' | 'gallery' | 'blog' | 'contact' | 'testimonials'
   const [selectedServiceId, setSelectedServiceId] = useState('wedding-planning')
   const [galleryCategory, setGalleryCategory] = useState('ALL')
   const [lightboxIndex, setLightboxIndex] = useState(null)
@@ -478,6 +479,10 @@ function App() {
         <BookConsultation navigateTo={navigateTo} />
       )}
 
+      {currentPage === 'testimonials' && (
+        <Testimonials navigateTo={navigateTo} />
+      )}
+
       {/* 11. Footer Section */}
       {showHeaderFooter && (
         <footer className="footer-section">
@@ -549,7 +554,7 @@ function App() {
                 <li><a href="#portfolio" onClick={(e) => { e.preventDefault(); navigateTo('portfolio'); }}>Portfolio</a></li>
                 <li><a href="#venues" onClick={(e) => { e.preventDefault(); navigateTo('venues'); }}>Venues</a></li>
                 <li><a href="#gallery" onClick={(e) => { e.preventDefault(); navigateTo('gallery'); }}>Gallery</a></li>
-                <li><a href="#testimonials" onClick={(e) => { e.preventDefault(); navigateTo('home', 'testimonials'); }}>Testimonials</a></li>
+                <li><a href="#testimonials" onClick={(e) => { e.preventDefault(); navigateTo('testimonials'); }}>Testimonials</a></li>
                 <li><a href="#blog" onClick={(e) => { e.preventDefault(); navigateTo('blog'); }}>Blog</a></li>
                 <li><a href="#faq" onClick={(e) => { e.preventDefault(); navigateTo('home', 'faq'); }}>FAQ</a></li>
                 <li><a href="#contact" onClick={(e) => { e.preventDefault(); navigateTo('contact'); }}>Contact</a></li>

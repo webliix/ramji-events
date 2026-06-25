@@ -376,7 +376,7 @@ export default function Home({ navigateTo }) {
           </div>
 
           <div className="testimonials-action">
-            <button className="btn-outline">Read More Stories</button>
+            <button className="btn-outline" onClick={() => navigateTo('testimonials')}>Read More Stories</button>
           </div>
         </div>
       </section>
