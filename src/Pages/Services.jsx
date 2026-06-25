@@ -123,8 +123,8 @@ export default function Services({ navigateTo, activeCategory, setActiveCategory
         <h2 className="consultation-heading">NOT SURE WHICH SERVICE YOU NEED?</h2>
         <p className="consultation-subheading">Book a free consultation and our senior planners will guide you to the perfect package.</p>
         <div className="consultation-buttons">
-          <button className="btn-filled" onClick={() => navigateTo('contact')}>BOOK FREE CONSULTATION</button>
-          <button className="btn-outline" onClick={() => navigateTo('contact')}>REQUEST A QUOTE</button>
+          <button className="btn-filled" onClick={() => navigateTo('get-quote')}>BOOK FREE CONSULTATION</button>
+          <button className="btn-outline" onClick={() => navigateTo('get-quote')}>REQUEST A QUOTE</button>
         </div>
       </section>
     </div>

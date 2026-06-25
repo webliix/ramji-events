@@ -27,7 +27,7 @@ export default function Home({ navigateTo }) {
             India's premier event planning and catering company. Weddings, corporate galas, destination celebrations — executed with uncompromising elegance.
           </p>
           <div className="hero-actions">
-            <button className="btn-filled" onClick={() => navigateTo('contact')}>Book Free Consultation</button>
+            <button className="btn-filled" onClick={() => navigateTo('get-quote')}>Book Free Consultation</button>
             <button className="btn-outline" onClick={() => navigateTo('portfolio')}>View Our Work</button>
           </div>
         </div>

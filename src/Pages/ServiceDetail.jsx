@@ -71,7 +71,7 @@ export default function ServiceDetail({ navigateTo, selectedServiceId, activeFaq
                       </li>
                     ))}
                   </ul>
-                  <button className={pkg.popular ? 'btn-filled' : 'btn-outline'} onClick={() => navigateTo('contact')}>GET STARTED</button>
+                  <button className={pkg.popular ? 'btn-filled' : 'btn-outline'} onClick={() => navigateTo('get-quote')}>GET STARTED</button>
                 </div>
               ))}
             </div>
@@ -139,9 +139,9 @@ export default function ServiceDetail({ navigateTo, selectedServiceId, activeFaq
         <div className="wedding-sidebar-col">
           <div className="wedding-sidebar">
             <h3 className="sidebar-title">Start Planning Today</h3>
-            <button className="btn-filled" onClick={() => navigateTo('contact')}>BOOK FREE CONSULTATION</button>
+            <button className="btn-filled" onClick={() => navigateTo('get-quote')}>BOOK FREE CONSULTATION</button>
             <div className="sidebar-or">or</div>
-            <button className="btn-outline" onClick={() => navigateTo('contact')}>REQUEST A QUOTE</button>
+            <button className="btn-outline" onClick={() => navigateTo('get-quote')}>REQUEST A QUOTE</button>
             <div className="sidebar-divider"></div>
             <div className="sidebar-contact-info">
               <a href="tel:+916392956850" className="sidebar-contact-link">+91 63929 56850</a>

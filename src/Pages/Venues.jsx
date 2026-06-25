@@ -170,7 +170,7 @@ export default function Venues({
           <h2 className="portfolio-cta-title">CAN'T FIND THE PERFECT VENUE?</h2>
           <p className="portfolio-cta-desc">Our venue scouts have access to 200+ unlisted spaces. Tell us your vision and we'll find the perfect match.</p>
           <div className="portfolio-cta-buttons">
-            <button className="btn-filled" onClick={() => navigateTo('contact')}>DISCUSS VENUE REQUIREMENTS</button>
+            <button className="btn-filled" onClick={() => navigateTo('get-quote')}>DISCUSS VENUE REQUIREMENTS</button>
           </div>
         </div>
       </div>
