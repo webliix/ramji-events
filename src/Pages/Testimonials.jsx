@@ -3,6 +3,8 @@ import heroImg from '../assets/hero.png'
 import rameshJoshi from '../assets/ramesh_joshi.png'
 import ananyaSharma from '../assets/ananya_sharma.png'
 import vikramMalhotra from '../assets/vikram_malhotra.png'
+import sunitaKapoor from '../assets/sunita_kapoor.png'
+import deepikaNair from '../assets/deepika_nair.png'
 
 export default function Testimonials({ navigateTo }) {
   const testimonials = [
@@ -27,7 +29,7 @@ export default function Testimonials({ navigateTo }) {
       name: 'Sunita Kapoor',
       category: 'Anniversary Gala, Mumbai',
       text: '"I wanted something extraordinary for our 50th anniversary. The team at Ramji didn\'t just meet the brief — they exceeded it in ways I couldn\'t have imagined. Breathtaking."',
-      image: ananyaSharma,
+      image: sunitaKapoor,
       stars: 5
     },
     {
@@ -43,7 +45,7 @@ export default function Testimonials({ navigateTo }) {
       name: 'Deepika Nair, CEO',
       category: 'Product Launch, Delhi',
       text: '"The launch event perfectly captured our brand identity. The venue setup, the lighting, the F&B — all on point. Generated incredible media coverage. Thank you Ramji team!"',
-      image: ananyaSharma,
+      image: deepikaNair,
       stars: 5
     }
   ]
