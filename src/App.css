@@ -5939,10 +5939,10 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 }
 
 .testimonial-detail-card {
-  background: #171513;
-  border: 1px solid rgba(197, 168, 128, 0.1);
-  padding: 35px 30px;
-  border-radius: 8px;
+  background: #13110f;
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  padding: 40px 35px;
+  border-radius: 4px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -5951,22 +5951,22 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 .testimonial-detail-card:hover {
   transform: translateY(-5px);
   border-color: var(--gold-color);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 .testimonial-card-profile {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
 .testimonial-card-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1.5px solid var(--gold-color);
+  border: 1px solid rgba(197, 168, 128, 0.3);
   background: #25221f;
   flex-shrink: 0;
 }
@@ -5980,27 +5980,28 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 .testimonial-card-meta-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .testimonial-card-name {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  color: var(--text-primary);
-  letter-spacing: 0.05em;
+  color: var(--gold-color);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .testimonial-card-category {
   font-family: var(--font-sans);
   font-size: 12px;
-  color: var(--text-muted);
+  color: #a89276;
 }
 
 .testimonial-card-stars {
   display: flex;
   gap: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .star-gold {
@@ -6010,9 +6011,9 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 
 .testimonial-card-text {
   font-family: var(--font-serif);
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(197, 168, 128, 0.85);
   font-style: italic;
 }
 
