@@ -3911,9 +3911,9 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 
 /* Venues Page Styles */
 .venues-controls-container {
-  max-width: 1400px;
-  margin: 40px auto 20px;
-  padding: 0 4%;
+  max-width: 1500px;
+  margin: 20px auto 20px;
+  padding: 0 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -4005,9 +4005,9 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 }
 
 .venues-grid-container {
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 30px auto 60px;
-  padding: 0 4%;
+  padding: 0 2%;
 }
 
 .venues-grid {
@@ -6260,6 +6260,20 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
     width: 100%;
   }
 }
+
+/* Venues Page Layout Adjustments */
+.venues-page .services-header-banner {
+  padding: 110px 8% 50px;
+  min-height: 280px;
+}
+
+@media (max-width: 768px) {
+  .venues-page .services-header-banner {
+    padding: 80px 20px 40px;
+    min-height: 200px;
+  }
+}
+
 
 
 
