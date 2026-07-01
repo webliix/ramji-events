@@ -301,7 +301,7 @@ export default function Blog({
                     onClick={() => setFormImage(key)}
                     title={IMAGE_LABELS[key]}
                   >
-                    <img src={IMAGE_MAP[key]} alt={IMAGE_LABELS[key]} />
+                    <img src={IMAGE_MAP[key]} alt={IMAGE_LABELS[key]} loading="lazy" />
                     {formImage === key && <span className="selected-check">✓</span>}
                   </div>
                 ))}
@@ -402,7 +402,7 @@ export default function Blog({
                   )}
 
                   <div className="blog-card-img-wrapper">
-                    <img src={getPostImage(post.image)} alt={post.title} className="blog-card-img" />
+                    <img src={getPostImage(post.image)} alt={post.title} className="blog-card-img" loading="lazy" />
                   </div>
                   <div className="blog-card-content">
                     <div className="blog-card-meta">

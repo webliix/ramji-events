@@ -127,7 +127,7 @@ export default function Venues({
               .map((venue, idx) => (
                 <div key={idx} className="venue-card">
                   <div className="venue-card-img-wrapper">
-                    <img src={venue.image} alt={venue.title} className="venue-card-img" />
+                    <img src={venue.image} alt={venue.title} className="venue-card-img" loading="lazy" />
                   </div>
                   <div className="venue-card-content">
                     <div className="venue-card-header">

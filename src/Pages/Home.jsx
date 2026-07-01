@@ -117,7 +117,7 @@ export default function Home({ navigateTo }) {
           {portfolioProjects.slice(0, 3).map((project, idx) => (
             <div key={idx} className="portfolio-card">
               <div className="portfolio-card-img-wrapper">
-                <img src={project.image} alt={project.title} className="portfolio-card-img" />
+                <img src={project.image} alt={project.title} className="portfolio-card-img" loading="lazy" />
                 <div className="portfolio-card-overlay"></div>
               </div>
               <div className="portfolio-card-content">
@@ -232,7 +232,7 @@ export default function Home({ navigateTo }) {
           {/* Right Column: Image & Years Badge */}
           <div className="why-ramji-right">
             <div className="why-ramji-img-wrapper">
-              <img src={whyRamjiDining} alt="Luxury Dining Decor" className="why-ramji-img" />
+              <img src={whyRamjiDining} alt="Luxury Dining Decor" className="why-ramji-img" loading="lazy" />
               <div className="years-badge">
                 <span className="years-number">22</span>
                 <span className="years-text">Years of Excellence</span>

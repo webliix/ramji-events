@@ -429,7 +429,7 @@ export default function Testimonials({ navigateTo }) {
               <div key={item.id} className="testimonial-detail-card animate-fade-in">
                 <div className="testimonial-card-profile">
                   <div className="testimonial-card-avatar">
-                    <img src={item.image} alt={item.name} />
+                    <img src={item.image} alt={item.name} loading="lazy" />
                   </div>
                   <div className="testimonial-card-meta-info">
                     <h3 className="testimonial-card-name">{item.name}</h3>
@@ -564,7 +564,7 @@ export default function Testimonials({ navigateTo }) {
                             className="google-review-img-wrapper"
                             onClick={() => setLightboxImage(img)}
                           >
-                            <img src={img} alt={`Ceremony setup photo ${imgIdx + 1}`} />
+                            <img src={img} alt={`Ceremony setup photo ${imgIdx + 1}`} loading="lazy" />
                             <div className="google-img-overlay">
                               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -674,7 +674,7 @@ export default function Testimonials({ navigateTo }) {
                   <div className="google-write-preview-thumbnails">
                     {newReviewPhotos.map((img, idx) => (
                       <div key={idx} className="google-write-thumb-wrapper">
-                        <img src={img} alt="Preview thumbnail" />
+                        <img src={img} alt="Preview thumbnail" loading="lazy" />
                         <button 
                           className="google-write-thumb-remove" 
                           onClick={() => setNewReviewPhotos(prev => prev.filter((_, i) => i !== idx))}

@@ -126,7 +126,7 @@ export const services = [
     link: '#event-decoration',
     desc: 'Custom decor, floral design, lighting, and thematic styling for any venue.',
     inDropdown: true,
-    inGrid: false,
+    inGrid: true,
     categories: ['DECORATION'],
     displayTag: 'Decoration',
     icon: (

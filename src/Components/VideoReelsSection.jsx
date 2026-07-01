@@ -81,17 +81,19 @@ const VideoReelsSection = () => {
             >
               {/* Card Media Wrapper */}
               <div className="reel-card-media">
-                <img src={reel.coverImage} alt={reel.title} className="reel-card-img" />
+                <img src={reel.coverImage} alt={reel.title} className="reel-card-img" loading="lazy" />
                 
-                <video 
-                  className="reel-card-video-preview" 
-                  src={reel.videoUrl}
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
-                />
+                {hoveredReelId === reel.id && (
+                  <video 
+                    className="reel-card-video-preview" 
+                    src={reel.videoUrl}
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
+                  />
+                )}
                 
                 <div className="reel-card-overlay">
                   <div className="reel-play-button">

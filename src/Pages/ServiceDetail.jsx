@@ -111,6 +111,7 @@ export default function ServiceDetail({ navigateTo, selectedServiceId, activeFaq
                     src={imgSrc}
                     alt={`${details.title} showcase ${idx + 1}`}
                     className="detail-gallery-img"
+                    loading="lazy"
                   />
                 ))}
               </div>

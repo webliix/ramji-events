@@ -79,7 +79,7 @@ export default function Portfolio({
             .map((project, idx) => (
               <div key={idx} className="portfolio-card">
                 <div className="portfolio-card-img-wrapper">
-                  <img src={project.image} alt={project.title} className="portfolio-card-img" />
+                  <img src={project.image} alt={project.title} className="portfolio-card-img" loading="lazy" />
                   <div className="portfolio-card-overlay"></div>
                 </div>
                 <div className="portfolio-card-content">

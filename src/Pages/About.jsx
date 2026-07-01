@@ -57,7 +57,7 @@ export default function About({ navigateTo }) {
             {/* Right: Image */}
             <div className="about-story-right">
               <div className="about-story-image-wrapper">
-                <img src={whyRamjiDining} alt="Ramji Events Team and Setup" className="about-story-image" />
+                <img src={whyRamjiDining} alt="Ramji Events Team and Setup" className="about-story-image" loading="lazy" />
                 <div className="about-story-image-decor"></div>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function About({ navigateTo }) {
             {/* Member 1 */}
             <div className="team-card">
               <div className="team-card-image-wrapper">
-                <img src={rameshJoshi} alt="Ramesh Joshi" className="team-card-img" />
+                <img src={rameshJoshi} alt="Ramesh Joshi" className="team-card-img" loading="lazy" />
               </div>
               <div className="team-card-info">
                 <h3 className="team-member-name">Ramesh Joshi</h3>
@@ -145,7 +145,7 @@ export default function About({ navigateTo }) {
             {/* Member 2 */}
             <div className="team-card">
               <div className="team-card-image-wrapper">
-                <img src={ananyaSharma} alt="Ananya Sharma" className="team-card-img" />
+                <img src={ananyaSharma} alt="Ananya Sharma" className="team-card-img" loading="lazy" />
               </div>
               <div className="team-card-info">
                 <h3 className="team-member-name">Ananya Sharma</h3>
@@ -159,7 +159,7 @@ export default function About({ navigateTo }) {
             {/* Member 3 */}
             <div className="team-card">
               <div className="team-card-image-wrapper">
-                <img src={vikramMalhotra} alt="Vikram Malhotra" className="team-card-img" />
+                <img src={vikramMalhotra} alt="Vikram Malhotra" className="team-card-img" loading="lazy" />
               </div>
               <div className="team-card-info">
                 <h3 className="team-member-name">Vikram Malhotra</h3>

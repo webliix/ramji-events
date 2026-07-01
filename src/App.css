@@ -7139,6 +7139,53 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   background-color: #1557b0;
 }
 
+/* Return to Top Button above footer */
+.return-to-top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  z-index: 10;
+}
+
+.return-to-top-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.return-to-top-btn:hover {
+  color: var(--gold-color);
+  transform: translateY(-3px);
+}
+
+.return-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+  transition: transform var(--transition-fast);
+}
+
+.return-to-top-btn:hover .return-icon {
+  transform: translateY(-2px);
+}
+
 
 
 

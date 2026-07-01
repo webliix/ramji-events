@@ -56,7 +56,7 @@ export default function Gallery({
                   onClick={() => setLightboxIndex(originalIndex)}
                 >
                   <div className="gallery-card-img-wrapper">
-                    <img src={item.image} alt={item.title} className="gallery-card-img" />
+                    <img src={item.image} alt={item.title} className="gallery-card-img" loading="lazy" />
                     <div className="gallery-overlay">
                       <div className="gallery-overlay-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

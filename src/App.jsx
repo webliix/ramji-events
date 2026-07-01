@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import { useTheme } from './Theme/ThemeContext.jsx'
 import { services } from './Data/services.jsx'
@@ -30,6 +30,14 @@ function App() {
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const [blogCategory, setBlogCategory] = useState('ALL')
   const [activePost, setActivePost] = useState(null)
+  const shouldScrollToTop = useRef(true)
+
+  useEffect(() => {
+    if (shouldScrollToTop.current) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    shouldScrollToTop.current = true
+  }, [currentPage, selectedServiceId])
 
   useEffect(() => {
     if (activePost === null) return;
@@ -87,6 +95,12 @@ function App() {
   }
 
   const navigateTo = (page, anchor = null) => {
+    if (anchor) {
+      shouldScrollToTop.current = false
+    } else {
+      shouldScrollToTop.current = true
+    }
+
     setCurrentPage(page)
     setIsMobileMenuOpen(false)
     setActiveMobileDropdown(null)
@@ -109,7 +123,6 @@ function App() {
       }
     }
     
-    window.scrollTo({ top: 0, behavior: 'smooth' })
     if (anchor && page !== 'service-detail') {
       setTimeout(() => {
         const element = document.getElementById(anchor)
@@ -240,6 +253,9 @@ function App() {
               <a href="#blog" className={`nav-link ${currentPage === 'blog' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigateTo('blog'); }}>Blog</a>
             </li>
             <li className="nav-item">
+              <a href="#testimonials" className={`nav-link ${currentPage === 'testimonials' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigateTo('testimonials'); }}>Testimonials</a>
+            </li>
+            <li className="nav-item">
               <a href="#contact" className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigateTo('contact'); }}>Contact</a>
             </li>
           </ul>
@@ -359,6 +375,9 @@ function App() {
               </li>
               <li>
                 <a href="#blog" className={`mobile-nav-link ${currentPage === 'blog' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigateTo('blog'); }}>Blog</a>
+              </li>
+              <li>
+                <a href="#testimonials" className={`mobile-nav-link ${currentPage === 'testimonials' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigateTo('testimonials'); }}>Testimonials</a>
               </li>
               <li>
                 <a href="#contact" className={`mobile-nav-link ${currentPage === 'contact' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); navigateTo('contact'); }}>Contact</a>
@@ -487,6 +506,21 @@ function App() {
 
       {currentPage === 'faq' && (
         <FAQ navigateTo={navigateTo} />
+      )}
+
+      {/* 10.5. Return to Top Button */}
+      {showHeaderFooter && (
+        <div className="return-to-top-container">
+          <button 
+            className="return-to-top-btn" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <span>Return to Top</span>
+            <svg viewBox="0 0 24 24" className="return-icon">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+        </div>
       )}
 
       {/* 11. Footer Section */}
