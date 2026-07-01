@@ -4923,6 +4923,10 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   font-size: 14px;
   padding: 12px 16px;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
   transition: all var(--transition-fast);
 }
 
@@ -5617,6 +5621,11 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 /* Date picker color tweaks */
 .form-date-picker {
   color-scheme: dark;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Error states */
