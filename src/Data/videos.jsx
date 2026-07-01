@@ -19,7 +19,7 @@ export const videoReels = [
     id: 1,
     title: 'Royal Mandap & Floral Decor Curation',
     description: 'A behind-the-scenes look at the fabrication of a stunning floral mandap in Udaipur.',
-    videoUrl: 'https://raw.githubusercontent.com/arungop/akhiarya/master/assets/video/save_s.mp4',
+    videoUrl: '/reel_weddings.mp4',
     coverImage: mehraWedding,
     category: 'Weddings'
   },
@@ -27,7 +27,7 @@ export const videoReels = [
     id: 2,
     title: 'Gourmet Catering & Live Food Theater',
     description: 'Fine dining service and gourmet layouts created by our culinary artisans.',
-    videoUrl: 'https://raw.githubusercontent.com/raghvandernathmishra-oss/birthday-surprise-repository/main/humnava_mere_short_30s.mp4',
+    videoUrl: '/reel_catering.mp4',
     coverImage: whyRamjiDining,
     category: 'Catering'
   },
@@ -35,7 +35,7 @@ export const videoReels = [
     id: 3,
     title: 'Luxury Corporate Gala Entertainment',
     description: 'Choreographed light, sound, and staging for a grand scale summit.',
-    videoUrl: 'https://completefixing.com/wp-content/uploads/2025/09/CFS-Content-for-Top-Apprenticeship-Employers-Event.mp4',
+    videoUrl: '/reel_corporate.mp4',
     coverImage: kapoorGala,
     category: 'Corporate'
   }
