@@ -5,7 +5,6 @@ import './VideoReelsSection.css';
 const VideoReelsSection = () => {
   const [activeReel, setActiveReel] = useState(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [hoveredReelId, setHoveredReelId] = useState(null);
   const modalVideoRef = useRef(null);
 
   // Close on ESC key press
@@ -72,8 +71,6 @@ const VideoReelsSection = () => {
             <div 
               key={reel.id} 
               className="reel-card"
-              onMouseEnter={() => setHoveredReelId(reel.id)}
-              onMouseLeave={() => setHoveredReelId(null)}
               onClick={() => {
                 setActiveReel(reel);
                 setIsMuted(false); // Unmute by default when full screen opens
@@ -81,19 +78,15 @@ const VideoReelsSection = () => {
             >
               {/* Card Media Wrapper */}
               <div className="reel-card-media">
-                <img src={reel.coverImage} alt={reel.title} className="reel-card-img" loading="lazy" />
-                
-                {hoveredReelId === reel.id && (
-                  <video 
-                    className="reel-card-video-preview" 
-                    src={reel.videoUrl}
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
-                  />
-                )}
+                <video 
+                  className="reel-card-video-preview" 
+                  src={reel.videoUrl}
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
+                />
                 
                 <div className="reel-card-overlay">
                   <div className="reel-play-button">
