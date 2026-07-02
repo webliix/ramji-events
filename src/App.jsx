@@ -50,6 +50,148 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [activePost]);
 
+  // Dynamic SEO Metadata Manager
+  useEffect(() => {
+    const seoConfig = {
+      home: {
+        title: "Best Wedding Planners & Luxury Caterers in Greater Noida - Ramji Events",
+        description: "Ramji Events & Caterers is the premier wedding planner and luxury event catering service in Greater Noida, Noida & Delhi NCR. We curate magical weddings, corporate conferences, and memorable social celebrations.",
+        keywords: "wedding planners greater noida, luxury catering Delhi NCR, event decorators Noida, corporate event planners, Ramji Events and Caterers"
+      },
+      about: {
+        title: "About Us - Premium Event Directors & Caterers | Ramji Events",
+        description: "Learn more about Ramji Events & Caterers. Established in 2020, we have delivered 500+ successful events with premium planning, floral decors, and five-star catering.",
+        keywords: "event directors NCR, professional wedding team, catering history, Ramji Events founders, wedding planning experience"
+      },
+      services: {
+        title: "Our Event Planning & Catering Services | Ramji Events",
+        description: "Explore our end-to-end planning and dining services. From royal wedding mandaps and corporate product launches to boutique catering and themed social events.",
+        keywords: "event management services, luxury wedding decors, corporate summit planning, birthday party decorators, gourmet catering NCR"
+      },
+      portfolio: {
+        title: "Our Event Portfolio & Showcase Gallery | Ramji Events",
+        description: "Take a look at our past work. Real wedding pictures, grand banquet decors, and high-end corporate dining catering setups by Ramji Events.",
+        keywords: "event gallery, wedding setup photos, banquet decor portfolio, catering setups, event planning pictures"
+      },
+      venues: {
+        title: "Premier Event Venues & Banquets in Greater Noida | Ramji Events",
+        description: "Discover our partner wedding banquets, luxury hotels, and farmhouse lawn venues in Greater Noida and Noida. Find the perfect venue for your event.",
+        keywords: "wedding banquets greater noida, banquet halls noida extension, party farmhouses NCR, luxury wedding lawns"
+      },
+      gallery: {
+        title: "Event Photos, Stages & Catering Gallery | Ramji Events",
+        description: "Browse photos of our gorgeous floral archways, haldi seating decor, traditional mehndi backdrops, and delicious catering arrangements.",
+        keywords: "event stage photos, mehndi decor ideas, haldi backdrop, catering setup pictures"
+      },
+      contact: {
+        title: "Contact Ramji Events - Get a Free Quote & Booking | Ramji Events",
+        description: "Get in touch with Ramji Events & Caterers. Visit our office at Galaxy Blue Sapphire Plaza, Greater Noida, or request a free price quote online.",
+        keywords: "contact event planners, hire caterers greater noida, event planning office, get quote, Ramji Events phone number"
+      },
+      'book-consultation': {
+        title: "Book a Free Event Planning Consultation | Ramji Events",
+        description: "Schedule a personal call with our event directors. Choose your event type, select a date and time slot, and get expert guidance.",
+        keywords: "book wedding consultation, event planner call, free catering advice session"
+      },
+      'get-quote': {
+        title: "Get a Free Event Planning & Catering Price Quote | Ramji Events",
+        description: "Request a customized budget proposal for your event. Specify guest count, date, location, and services to receive a detailed estimate.",
+        keywords: "event quote request, wedding planning cost estimate, party catering prices NCR"
+      }
+    };
+
+    let title = "Ramji Events & Caterers - Premium Wedding & Event Planners";
+    let description = "Event planning, design, and gourmet catering services by Ramji Events in Greater Noida & Delhi NCR.";
+    let keywords = "event planners, wedding decors, caterers, Noida, Delhi NCR";
+
+    // 1. Resolve general pages
+    if (seoConfig[currentPage]) {
+      title = seoConfig[currentPage].title;
+      description = seoConfig[currentPage].description;
+      keywords = seoConfig[currentPage].keywords;
+    }
+    // 2. Resolve Service Detail pages
+    else if (currentPage === 'service-detail') {
+      const serviceMeta = {
+        'wedding-planning': {
+          title: "Premium Wedding Planning & Coordination Services | Ramji Events",
+          description: "End-to-end wedding curation, vendor management, floral mandap setups, and luxury guest hosting for the perfect royal wedding experience.",
+          keywords: "wedding planner services, wedding decorators, marriage decorators Noida, wedding coordinator"
+        },
+        'destination-wedding': {
+          title: "Exotic Destination Wedding Planning Specialists | Ramji Events",
+          description: "Plan your dream wedding at premier locations in Udaipur, Jaipur, or Goa. Complete travel, venue setups, and guest hosting logistics.",
+          keywords: "destination wedding planners, udaipur wedding cost, jaipur marriage cost, beach wedding planners"
+        },
+        'corporate-event': {
+          title: "Corporate Event Management & Conferences Noida | Ramji Events",
+          description: "Seamless corporate conferences, executive seminars, and brand product launches with high-end AV setups and themed catering.",
+          keywords: "corporate event planners noida, summit management, product launch decorators, business seminar setup"
+        },
+        'birthday-celebration': {
+          title: "Themed Birthday Parties & Social Events Decor | Ramji Events",
+          description: "Unique themed birthdays, anniversaries, and family celebrations with custom backdrops, catering stalls, and entertainment.",
+          keywords: "birthday party organizers, sweet 16 decorators, family event planning, catering stalls noida"
+        },
+        'event-decoration': {
+          title: "Luxury Floral Decor & Stage Fabrication | Ramji Events",
+          description: "Custom lighting, grand stages, and floral installations created by our team to match your distinct aesthetic.",
+          keywords: "luxury wedding stage, floral mandap decors, haldi mehndi stage design, theme decorations"
+        }
+      };
+
+      const meta = serviceMeta[selectedServiceId] || serviceMeta['wedding-planning'];
+      title = meta.title;
+      description = meta.description;
+      keywords = meta.keywords;
+    }
+    // 3. Resolve Blog / Article details
+    else if (currentPage === 'blog') {
+      if (activePost) {
+        title = `${activePost.title} - Blog | Ramji Events`;
+        description = activePost.excerpt || "Read our latest event insights, design advice, and catering guides.";
+        keywords = "wedding tips, planning ideas, banquet recommendations, catering guides";
+      } else {
+        title = "Wedding Trends, Catering Tips & Event Blog | Ramji Events";
+        description = "Read planning advice, modern wedding decor ideas, budget tips, and catering guidelines from the experts at Ramji Events.";
+        keywords = "wedding planning blog, event advice, catering tips, decor trends, party ideas";
+      }
+    }
+
+    // Apply metadata to DOM
+    document.title = title;
+
+    // Helper to set or create meta tags
+    const updateMetaTag = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    };
+
+    const updateOgTag = (property, content) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    };
+
+    updateMetaTag('description', description);
+    updateMetaTag('keywords', keywords);
+    
+    // Open Graph Social Share Tags
+    updateOgTag('og:title', title);
+    updateOgTag('og:description', description);
+    updateOgTag('og:type', 'website');
+    updateOgTag('og:url', window.location.href);
+  }, [currentPage, selectedServiceId, activePost]);
+
   useEffect(() => {
     if (lightboxIndex === null) return;
     const handleKeyDown = (e) => {
