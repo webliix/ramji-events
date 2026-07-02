@@ -3,7 +3,9 @@ import './WhatsAppWidget.css';
 
 const WhatsAppWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNotification, setShowNotification] = useState(true);
+  const [showNotification, setShowNotification] = useState(() => {
+    return localStorage.getItem('ramji_whatsapp_closed') !== 'true';
+  });
   const [userMessage, setUserMessage] = useState('');
   const [selectedQuickInquiry, setSelectedQuickInquiry] = useState('');
   const widgetRef = useRef(null);
@@ -15,6 +17,7 @@ const WhatsAppWidget = () => {
     setIsOpen(!isOpen);
     if (showNotification) {
       setShowNotification(false);
+      localStorage.setItem('ramji_whatsapp_closed', 'true');
     }
   };
 
@@ -37,6 +40,11 @@ const WhatsAppWidget = () => {
 
   // Show a welcome tooltip notification after 4 seconds
   useEffect(() => {
+    const isClosed = localStorage.getItem('ramji_whatsapp_closed') === 'true';
+    if (isClosed) {
+      setShowNotification(false);
+      return;
+    }
     const timer = setTimeout(() => {
       // Only show if the user hasn't opened the widget yet
       if (!isOpen) {
@@ -87,7 +95,11 @@ const WhatsAppWidget = () => {
         <div className="whatsapp-tooltip-bubble">
           <div className="tooltip-header">
             <span>Ramji Events</span>
-            <button className="tooltip-close" onClick={(e) => { e.stopPropagation(); setShowNotification(false); }}>×</button>
+            <button className="tooltip-close" onClick={(e) => { 
+              e.stopPropagation(); 
+              setShowNotification(false); 
+              localStorage.setItem('ramji_whatsapp_closed', 'true');
+            }}>×</button>
           </div>
           <p>Namaste! Chat with us for quick bookings & quotes. 📞</p>
         </div>

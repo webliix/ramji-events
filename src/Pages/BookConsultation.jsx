@@ -131,8 +131,8 @@ export default function BookConsultation({ navigateTo }) {
         </div>
         <div className="quote-step-indicator-nodes">
           {steps.map(step => {
-            const isCompleted = step.num < currentStep
-            const isActive = step.num === currentStep
+            const isCompleted = step.num < currentStep || (step.num === 5 && isSubmitted)
+            const isActive = step.num === currentStep && !(step.num === 5 && isSubmitted)
             return (
               <div key={step.num} className={`quote-step-node-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}`}>
                 <div className="quote-step-node-circle">
@@ -295,7 +295,7 @@ export default function BookConsultation({ navigateTo }) {
             {currentStep === 4 && (
               <div className="quote-step-view animate-fade-in">
                 <h3 className="quote-step-title">Step 4 — Your Contact Details</h3>
-                <p className="quote-step-subtitle-hint">We'll send a confirmation and video call link to your email.</p>
+                <p className="quote-step-subtitle-hint">You will receive a call within 2hrs.</p>
 
                 <div className="form-group">
                   <label className="form-label" htmlFor="fullName">FULL NAME *</label>
@@ -376,7 +376,7 @@ export default function BookConsultation({ navigateTo }) {
                 
                 <h2 className="success-headline">CONSULTATION CONFIRMED!</h2>
                 <p className="success-copy consult-success-copy">
-                  A video call link has been sent to <strong>{formData.email}</strong>. We look forward to hearing your vision.
+                  You will receive a call within 2hrs. We look forward to hearing your vision.
                 </p>
 
                 {/* Summary Box */}

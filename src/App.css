@@ -1975,9 +1975,10 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   }
 
   .floating-actions {
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    gap: 8px;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -1985,8 +1986,10 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   .floating-btn {
     flex: 1;
     justify-content: center;
-    padding: 10px 12px;
-    font-size: 11px;
+    padding: 10px 8px !important;
+    font-size: 10.5px !important;
+    letter-spacing: 0.02em;
+    min-width: 0 !important;
   }
 
   .stats-bar {
@@ -4901,6 +4904,10 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   gap: 20px;
 }
 
+.form-row > * {
+  min-width: 0;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -5372,12 +5379,16 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 70px;
+  flex: 1;
+  max-width: 70px;
+  min-width: 0;
 }
 
 .quote-step-node-circle {
   width: 50px;
   height: 50px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
@@ -5725,13 +5736,21 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
     display: none;
   }
   .quote-step-node-item {
-    width: auto;
+    flex: 1;
+    max-width: 45px;
+    min-width: 0;
   }
   .quote-step-node-circle {
     width: 36px;
-    height: 36px;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
     font-size: 14px;
     border-width: 1.5px;
+  }
+  .quote-step-title {
+    font-size: 20px;
+    padding-bottom: 12px;
   }
   .node-checkmark {
     width: 16px;
@@ -5746,14 +5765,94 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
     grid-template-columns: repeat(2, 1fr);
   }
   .quote-services-checkboxes-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .quote-service-checkbox-card {
+    display: flex !important;
+    align-items: center;
+    gap: 10px !important;
+    padding: 12px 15px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .checkbox-card-label {
+    font-size: 12px !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
   .quote-selection-buttons-row {
-    flex-direction: column;
-    gap: 10px;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .quote-pill-btn {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 50px;
+    padding: 12px 20px !important;
+    margin-bottom: 10px;
+  }
+  .quote-pill-btn:last-child {
+    margin-bottom: 0;
+  }
+  .quote-form-actions {
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .quote-form-actions div:empty {
+    display: none;
+  }
+  .quote-nav-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 50px;
+    padding: 12px 20px !important;
+  }
+  .consult-services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-service-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-time-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-time-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -5764,9 +5863,14 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   .services-title {
     font-size: 28px;
   }
+  .quote-step-node-item {
+    max-width: 40px;
+  }
   .quote-step-node-circle {
     width: 32px;
-    height: 32px;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
     font-size: 12px;
   }
   .node-checkmark {
@@ -5781,12 +5885,85 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   .quote-budget-cards-grid {
     grid-template-columns: 1fr;
   }
-  .quote-form-actions {
-    flex-direction: column;
+  /* quote-form-actions and quote-nav-btn styled in 768px media query */
+  .consult-services-grid {
+    grid-template-columns: 1fr !important;
     gap: 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .quote-nav-btn {
-    width: 100%;
+  .consult-service-card {
+    padding: 18px 15px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-service-name {
+    font-size: 13px !important;
+  }
+  .consult-time-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-time-card {
+    padding: 15px 10px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-time-value {
+    font-size: 13px !important;
+  }
+  .consultation-summary-card {
+    padding: 15px 20px;
+  }
+  .quote-step-title {
+    font-size: 15px;
+    padding-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+  .quote-step-subtitle-hint {
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .consult-time-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-time-card {
+    padding: 12px 10px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .consult-time-value {
+    font-size: 12px !important;
+  }
+  .consult-service-card {
+    padding: 15px 10px !important;
+  }
+  .consultation-summary-card {
+    padding: 15px;
+  }
+  .consult-service-name {
+    font-size: 12px !important;
+  }
+  .quote-step-title {
+    font-size: 13px;
+    padding-bottom: 8px;
   }
 }
 

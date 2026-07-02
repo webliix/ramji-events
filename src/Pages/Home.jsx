@@ -150,7 +150,7 @@ export default function Home({ navigateTo }) {
         </div>
       </section>
 
-      <VideoReelsSection />
+      <VideoReelsSection navigateTo={navigateTo} />
 
       {/* 9. Why Choose Ramji Section */}
       <section className="why-ramji-section" id="why-ramji">

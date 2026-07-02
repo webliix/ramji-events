@@ -63,6 +63,12 @@ export default function Blog({
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingPost, setEditingPost] = useState(null);
 
+  // Admin Login Modal States
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [usernameInput, setUsernameInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
+  const [loginError, setLoginError] = useState('');
+
   // Form Fields State
   const [formTitle, setFormTitle] = useState('');
   const [formCategory, setFormCategory] = useState('Weddings');
@@ -189,6 +195,19 @@ export default function Blog({
     setEditingPost(null);
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    if (usernameInput === 'akhilyadav6850' && passwordInput === 'Akhil@6850') {
+      setIsAdminMode(true);
+      setIsLoginModalOpen(false);
+      setUsernameInput('');
+      setPasswordInput('');
+      setLoginError('');
+    } else {
+      setLoginError('Invalid Username or Password! Please try again.');
+    }
+  };
+
   return (
     <div className="services-page blog-page">
       {/* Blog Header Banner */}
@@ -218,8 +237,15 @@ export default function Blog({
           <button 
             className="btn-outline btn-admin" 
             onClick={() => {
-              setIsAdminMode(!isAdminMode);
-              setIsFormOpen(false);
+              if (isAdminMode) {
+                setIsAdminMode(false);
+                setIsFormOpen(false);
+              } else {
+                setIsLoginModalOpen(true);
+                setUsernameInput('');
+                setPasswordInput('');
+                setLoginError('');
+              }
             }}
           >
             {isAdminMode ? "🛠️ DISABLE ADMIN" : "🛠️ ENABLE ADMIN"}
@@ -485,6 +511,48 @@ export default function Blog({
                 </>
               )}
             </div>
+          </div>
+        </div>
+      )}
+      {/* Admin Login Modal */}
+      {isLoginModalOpen && (
+        <div className="admin-login-modal-overlay">
+          <div className="admin-login-modal-card animate-fade-in">
+            <button className="login-modal-close" onClick={() => setIsLoginModalOpen(false)}>×</button>
+            <h3 className="login-modal-title">Admin Authentication</h3>
+            <p className="login-modal-subtitle">Enter your credentials to enable admin mode.</p>
+            
+            {loginError && <div className="login-error-banner">{loginError}</div>}
+            
+            <form onSubmit={handleLoginSubmit} className="login-modal-form">
+              <div className="form-group">
+                <label className="form-label" htmlFor="admin-username">USERNAME</label>
+                <input
+                  type="text"
+                  id="admin-username"
+                  className="form-control"
+                  placeholder="Enter username"
+                  value={usernameInput}
+                  onChange={(e) => setUsernameInput(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group" style={{ marginTop: '15px' }}>
+                <label className="form-label" htmlFor="admin-password">PASSWORD</label>
+                <input
+                  type="password"
+                  id="admin-password"
+                  className="form-control"
+                  placeholder="Enter password"
+                  value={passwordInput}
+                  onChange={(e) => setPasswordInput(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className="btn-filled login-submit-btn" style={{ marginTop: '25px', width: '100%' }}>
+                LOGIN &rarr;
+              </button>
+            </form>
           </div>
         </div>
       )}

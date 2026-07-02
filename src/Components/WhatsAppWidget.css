@@ -434,17 +434,20 @@
 }
 
 /* 5. Responsive Styles */
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   /* Let it behave like standard buttons inside floating actions on mobile */
   .whatsapp-widget-container {
     flex: 1;
+    min-width: 0 !important;
   }
 
   .whatsapp-floating-trigger {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     justify-content: center;
-    padding: 10px 12px;
-    font-size: 11px;
+    padding: 10px 8px !important;
+    font-size: 10.5px !important;
+    letter-spacing: 0.02em;
     border-radius: 4px;
     animation: none; /* Disable heavy animation on mobile to save power & fit better */
   }

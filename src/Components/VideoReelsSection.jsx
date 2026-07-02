@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { videoReels } from '../Data/videos.jsx';
 import './VideoReelsSection.css';
 
-const VideoReelsSection = () => {
+const VideoReelsSection = ({ navigateTo }) => {
   const [activeReel, setActiveReel] = useState(null);
   const [isMuted, setIsMuted] = useState(true);
   const modalVideoRef = useRef(null);
@@ -173,7 +173,7 @@ const VideoReelsSection = () => {
                       <span>Love</span>
                     </div>
                     <span className="engagement-separator">·</span>
-                    <button className="reel-consult-cta" onClick={() => { setActiveReel(null); window.scrollTo({ top: 0 }); }}>
+                    <button className="reel-consult-cta" onClick={() => { setActiveReel(null); if (navigateTo) navigateTo('contact'); }}>
                       Inquire Now
                     </button>
                   </div>

@@ -137,8 +137,8 @@ export default function GetQuote({ navigateTo }) {
         </div>
         <div className="quote-step-indicator-nodes">
           {steps.map(step => {
-            const isCompleted = step.num < currentStep
-            const isActive = step.num === currentStep
+            const isCompleted = step.num < currentStep || (step.num === 6 && isSubmitted)
+            const isActive = step.num === currentStep && !(step.num === 6 && isSubmitted)
             return (
               <div key={step.num} className={`quote-step-node-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}`}>
                 <div className="quote-step-node-circle">

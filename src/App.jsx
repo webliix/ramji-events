@@ -95,7 +95,7 @@ function App() {
   }
 
   const navigateTo = (page, anchor = null) => {
-    if (anchor) {
+    if (anchor && page !== 'service-detail') {
       shouldScrollToTop.current = false
     } else {
       shouldScrollToTop.current = true
@@ -166,14 +166,14 @@ function App() {
 
           <div className="top-bar-right">
             <div className="social-icons">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+              <a href="https://www.instagram.com/ram_ji_events?igsh=MXdsbmRudzBhc3VzZQ==" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                 <svg viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" strokeWidth="2"/>
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                 </svg>
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=100084764472858&ref=pl_edit_xav_ig_profile_page&target=102813429220505" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                 <svg viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" />
                 </svg>
@@ -537,14 +537,14 @@ function App() {
                 Crafting extraordinary celebrations since 2020. 500+ events. 15 cities. One unwavering standard of excellence.
               </p>
               <div className="footer-socials">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Instagram">
+                <a href="https://www.instagram.com/ram_ji_events?igsh=MXdsbmRudzBhc3VzZQ==" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Instagram">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                     <circle cx="17.5" cy="6.5" r="1"/>
                   </svg>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=100084764472858&ref=pl_edit_xav_ig_profile_page&target=102813429220505" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Facebook">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                   </svg>
