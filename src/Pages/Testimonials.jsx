@@ -716,7 +716,7 @@ export default function Testimonials({ navigateTo }) {
           <span className="satisfaction-percentage">98%</span>
           <h3 className="satisfaction-title">CLIENT SATISFACTION RATE</h3>
           <p className="satisfaction-desc">
-            Based on post-event surveys conducted across 500+ events since 2002.
+            Based on post-event surveys conducted across 500+ events since 2020.
           </p>
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function About({ navigateTo }) {
             <span className="breadcrumb-separator">&gt;</span>
             <span className="breadcrumb-active">ABOUT US</span>
           </div>
-          <span className="about-subtitle">22 YEARS OF EXTRAORDINARY EVENTS</span>
+          <span className="about-subtitle">6 YEARS OF EXTRAORDINARY EVENTS</span>
           <h1 className="about-title">About Us</h1>
           <p className="about-lead">
             From a two-person studio in Noida to India's most trusted event company — this is our story.
@@ -31,7 +31,7 @@ export default function About({ navigateTo }) {
               <span className="about-story-badge">OUR STORY</span>
               <h2 className="about-story-heading">BORN FROM A PASSION FOR PERFECTION</h2>
               <p className="about-story-desc">
-                In 2002, Ramesh Joshi had one conviction: every celebration deserves to be extraordinary. Starting with a small team of Noida, Ramji Events grew organically — client by client, memory by memory.
+                In 2020, Ramesh Joshi had one conviction: every celebration deserves to be extraordinary. Starting with a small team of Noida, Ramji Events grew organically — client by client, memory by memory.
               </p>
               <p className="about-story-desc">
                 Today, our 120-member team brings that same founding conviction to every event, from an intimate anniversary dinner to a 2000-guest corporate summit. We don't simply plan events — we architect experiences.

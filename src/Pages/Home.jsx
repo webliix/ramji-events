@@ -25,7 +25,7 @@ export default function Home({ navigateTo }) {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <div className="hero-subtitle">
-            <span className="subtitle-text">Since 2002 · 500+ Events · 15 Cities</span>
+            <span className="subtitle-text">Since 2020 · 500+ Events · 15 Cities</span>
             <div className="subtitle-line"></div>
           </div>
           <h1 className="hero-title">
@@ -50,7 +50,7 @@ export default function Home({ navigateTo }) {
           <span className="stat-label">Events Delivered</span>
         </div>
         <div className="stat-item">
-          <span className="stat-number">22</span>
+          <span className="stat-number">6</span>
           <span className="stat-label">Years of Excellence</span>
         </div>
         <div className="stat-item">
@@ -234,7 +234,7 @@ export default function Home({ navigateTo }) {
             <div className="why-ramji-img-wrapper">
               <img src={whyRamjiDining} alt="Luxury Dining Decor" className="why-ramji-img" loading="lazy" />
               <div className="years-badge">
-                <span className="years-number">22</span>
+                <span className="years-number">6</span>
                 <span className="years-text">Years of Excellence</span>
               </div>
             </div>

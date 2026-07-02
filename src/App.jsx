@@ -534,7 +534,7 @@ function App() {
                 <span className="logo-sub">Events &amp; Caterers</span>
               </div>
               <p className="footer-desc">
-                Crafting extraordinary celebrations since 2002. 500+ events. 15 cities. One unwavering standard of excellence.
+                Crafting extraordinary celebrations since 2020. 500+ events. 15 cities. One unwavering standard of excellence.
               </p>
               <div className="footer-socials">
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Instagram">
