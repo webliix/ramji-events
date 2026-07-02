@@ -285,7 +285,7 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 101;
+  z-index: 2001;
 }
 
 .menu-toggle span {
@@ -482,7 +482,7 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   height: 100vh;
   background-color: var(--card-bg);
   border-left: 1px solid var(--border-color);
-  z-index: 100;
+  z-index: 2000;
   padding: 100px 30px 40px;
   display: flex;
   flex-direction: column;
@@ -568,7 +568,7 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
-  z-index: 98;
+  z-index: 1999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
