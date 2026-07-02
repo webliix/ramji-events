@@ -6020,7 +6020,7 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 }
 
 .consult-time-card.selected .consult-time-value {
-  color: var(--bg-color);
+  color: var(--gold-color) !important;
 }
 
 .consult-success-icon {
