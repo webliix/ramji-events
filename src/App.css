@@ -5719,14 +5719,28 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
     padding: 35px 20px;
   }
   .quote-step-indicator-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   .quote-step-node-label {
     display: none;
   }
+  .quote-step-node-item {
+    width: auto;
+  }
+  .quote-step-node-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    border-width: 1.5px;
+  }
+  .node-checkmark {
+    width: 16px;
+    height: 16px;
+  }
   .quote-step-progress-bar {
     left: 20px;
     right: 20px;
+    top: 18px;
   }
   .quote-budget-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -5744,6 +5758,26 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
 }
 
 @media (max-width: 480px) {
+  .quote-form-wizard-card {
+    padding: 25px 15px;
+  }
+  .services-title {
+    font-size: 28px;
+  }
+  .quote-step-node-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  .node-checkmark {
+    width: 14px;
+    height: 14px;
+  }
+  .quote-step-progress-bar {
+    left: 15px;
+    right: 15px;
+    top: 16px;
+  }
   .quote-budget-cards-grid {
     grid-template-columns: 1fr;
   }
