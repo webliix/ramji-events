@@ -5639,6 +5639,10 @@ body, section, header, footer, .service-card, .testimonial-card, .partner-card, 
   box-sizing: border-box;
 }
 
+[data-theme="light"] .form-date-picker {
+  color-scheme: light !important;
+}
+
 /* Error states */
 .input-error {
   border-color: #d9534f !important;
